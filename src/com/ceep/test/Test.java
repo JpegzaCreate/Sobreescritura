@@ -20,10 +20,42 @@ public class Test {
     public static void main(String[] args) {
         
         Empleado emp1 = new Empleado("Santiago", 23000);
-        emp1.mostrarDetalles();
+        //emp1.mostrarDetalles();
         
         Gerente geren1 = new Gerente ("Luis",35000,"IT");
-        geren1.mostrarDestalles();
+        //geren1.mostrarDestalles();
+        
+        mostrar(emp1);
+        determinarTipo(emp1);
+        
+        mostrar(geren1);
+        determinarTipo(geren1);
+        
+        
+        
+        
     }
     
+    
+    public static void mostrar(Empleado em1){
+        em1.mostrarDetalles();
+        System.out.println("");
+    }
+    public static void mostrar(Gerente g1) {
+        g1.mostrarDestalles();
+        System.out.println("");
+    }
+    public static void determinarTipo(Empleado empleado){
+        if(empleado instanceof Gerente){
+            System.out.println("Empleado es de tipo Gerente");
+            System.out.println("");
+        } else if(empleado instanceof Empleado){
+            System.out.println("Es de tipo Empleado");
+            System.out.println("");
+        }else if(empleado instanceof Object){
+            System.out.println("Es de tipo object");
+            System.out.println("");
+        }
+        
+    }
 }
